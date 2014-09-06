@@ -1,0 +1,18 @@
+{
+  "name": "KanbanBoard",
+  "version": "0.0.0",
+  "authors": [
+    "Justin Neff <neffjustin@gmail.com>"
+  ],
+  "description": "Kanban board style task list",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "toastr": "~2.0.3",
+    "angular": "~1.2.23",
+    "angular-resource": "~1.2.23",
+    "angular-route": "~1.2.23",
+    "bootstrap": "~3.2.0"
+  }
+}
