@@ -2,5 +2,10 @@ doctype
 html
 	head
 		title Kanban Board
-	body
-		h1 Hello from Kanban Board Index!!
+	body(ng-app="kanbanBoard")
+		div(ng-include="'/partials/layout/shell'")
+
+		script(type="text/javascript", src="/vendor/angular/angular.min.js")
+		script(type="text/javascript", src="/app/app.module.js")
+		script(type="text/javascript", src="/app/app.config.js")
+		script(type="text/javascript", src="/app/layout/shell.controller.js")
