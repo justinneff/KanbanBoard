@@ -1,3 +1,4 @@
 .idea
 public/app/**/*.html
+server/includes/*.html
 server/views/*.html
