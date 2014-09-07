@@ -1,0 +1,8 @@
+div(ng-controller="BoardController as board")
+	.row
+		.col-md-4(ng-repeat="lane in board.lanes | orderBy:'display_order'")
+			h3.text-center.lane-header {{ lane.title }}
+				span.h4(ng-show="lane.card_limit")  ({{ lane.card_limit }})
+			div.card(ng-repeat="card in lane.cards")
+				h4 {{ card.title }}
+				div {{ card.description }}

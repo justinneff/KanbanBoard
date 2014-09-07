@@ -1,2 +1,25 @@
+grey = #a9a9a9
+light-grey = #d3d3d3
+
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	{prop} args
+
+border-radius()
+	vendor('border-radius', arguments)
+
 body
 	padding-top 50px
+
+.lane-header
+	border-bottom 1px solid grey
+	padding-bottom 0.6em
+	.h4
+		color grey
+
+.card
+	border 1px solid grey
+	border-radius 5px
+	padding 0.8em
+	margin-bottom 0.5em
