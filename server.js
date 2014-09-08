@@ -10,6 +10,9 @@ var config = require('./server/config/settings.config')[env];
 // configure express
 require('./server/config/express.config')(app, config);
 
+// configure mongoose
+require('./server/config/mongoose.config')(config);
+
 // define routes
 require('./server/config/routes.config')(app);
 
