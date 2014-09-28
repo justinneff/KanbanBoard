@@ -1,8 +1,10 @@
 div(ng-controller="BoardController as board")
 	.row
 		.col-md-4(ng-repeat="list in board.board.lists | orderBy:'position'")
-			h3.text-center.lane-header {{ list.title }}
-				span.h4(ng-show="list.cardLimit")  ({{ list.cardLimit }})
-			div.card(ng-repeat="card in board.board.cards | listCards:list._id | orderBy:'position'")
-				h4 {{ card.title }}
-				div {{ card.description }}
+			.task-list
+				h3.text-center.list-header {{ list.title }}
+					span.h4(ng-show="list.cardLimit")  ({{ list.cardLimit }})
+				div.card(ng-repeat="card in board.board.cards | listCards:list._id | orderBy:'position'")
+					h4 {{ card.title }}
+					div {{ card.description }}
+				a Add Card...
