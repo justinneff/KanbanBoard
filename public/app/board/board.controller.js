@@ -12,9 +12,11 @@
 		function activate() {
 			BoardService
 				.getBoard()
-				.then(function(data) {
-					vm.board = data;
-				})
+				.then(onGetBoardCompleted);
+		}
+
+		function onGetBoardCompleted(data) {
+			vm.board = data;
 		}
 	}
 }());
