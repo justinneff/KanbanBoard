@@ -10,9 +10,10 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "toastr": "~2.0.3",
-    "angular": "~1.2.23",
-    "angular-resource": "~1.2.23",
-    "angular-route": "~1.2.23",
-    "bootstrap": "~3.2.0"
+    "angular": "~1.2.26",
+    "angular-resource": "~1.2.26",
+    "angular-route": "~1.2.26",
+    "bootstrap": "~3.2.0",
+    "angular-animate": "~1.2.26"
   }
 }
