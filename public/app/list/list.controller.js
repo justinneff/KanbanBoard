@@ -8,10 +8,24 @@
 	function ListController($scope) {
 		var vm = this;
 		vm.list = $scope.list;
-		vm.addCardToList = addCardToList;
+		vm.isAdding = false;
+		vm.addNewCard = addNewCard;
+		vm.saveCard = saveCard;
+		vm.cancelAddCard = cancelAddCard;
 
-		function addCardToList() {
-			alert('Add Card clicked from ' + vm.list.title + '!');
+		function addNewCard() {
+			vm.isAdding = true;
+			vm.newCard = {};
+		}
+
+		function saveCard() {
+			vm.newCard.listId = vm.list._id;
+			vm.isAdding = false;
+		}
+
+		function cancelAddCard() {
+			vm.isAdding = false;
+			vm.newCard = undefined;
 		}
 	}
 }());

@@ -30,3 +30,12 @@ body
 	border-radius 5px
 	padding 0.8em
 	margin-bottom 0.5em
+
+.animate-show
+	vendor('transition', all linear 0.5s)
+	line-height 20px
+	opacity 1
+
+.animate-show.ng-hide
+	line-height 0
+	opacity 0

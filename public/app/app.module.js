@@ -1,3 +1,3 @@
 (function() {
-	angular.module('kanbanBoard', []);
+	angular.module('kanbanBoard', ['ngAnimate']);
 }());
