@@ -3,21 +3,28 @@
 		.module('app.board')
 		.controller('Board', Board);
 
-	Board.$inject = ['dataService', 'logger'];
-	function Board(dataService, logger) {
+	Board.$inject = ['dataService', 'logger', '$q'];
+	function Board(dataService, logger, $q) {
 		var vm = this;
 
 		activate();
 
 		function activate() {
+			$q
+				.when(getBoard())
+				.then(function() {
+					logger.success('Kanban Board Activated');
+				});
+		}
+
+		function getBoard() {
 			dataService
 				.getBoard()
-				.then(onGetBoardCompleted);
+				.then(onGetBoardCompleted)
 		}
 
 		function onGetBoardCompleted(data) {
 			vm.board = data;
-			logger.success('Kanban Board loaded!');
 		}
 	}
 }());

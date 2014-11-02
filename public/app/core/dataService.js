@@ -3,20 +3,20 @@
 		.module('app.core')
 		.factory('dataService', dataService);
 
-	dataService.$inject = ['$http', '$q'];
-	function dataService($http, $q) {
+	dataService.$inject = ['$http'];
+	function dataService($http) {
 		return {
 			getBoard: getBoard
 		};
 
 		function getBoard() {
-			var dfd = $q.defer();
-			$http
+			return $http
 				.get('/api/board')
-				.then(function(response) {
-					dfd.resolve(response.data);
-				});
-			return dfd.promise;
+				.then(getBoardComplete);
+
+			function getBoardComplete(response) {
+				return response.data;
+			}
 		}
 	}
 }());
