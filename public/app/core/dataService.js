@@ -1,10 +1,10 @@
 (function() {
 	angular
-		.module('kanbanBoard')
-		.factory('BoardService', BoardService);
+		.module('app.core')
+		.factory('dataService', dataService);
 
-	BoardService.$inject = ['$http', '$q'];
-	function BoardService($http, $q) {
+	dataService.$inject = ['$http', '$q'];
+	function dataService($http, $q) {
 		return {
 			getBoard: getBoard
 		};

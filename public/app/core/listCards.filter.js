@@ -1,9 +1,9 @@
 (function(){
 	angular
-		.module('kanbanBoard')
-		.filter('listCards', listCardsFilter);
+		.module('app.core')
+		.filter('listCards', listCards);
 
-	function listCardsFilter() {
+	function listCards() {
 		return function(input, listId) {
 			var output = [];
 			for (var i = 0; i < input.length; i++) {

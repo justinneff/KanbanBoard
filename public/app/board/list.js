@@ -1,11 +1,11 @@
 (function() {
 	angular
-		.module('kanbanBoard')
-		.controller('ListController', ListController);
+		.module('app.board')
+		.controller('List', List);
 
-	ListController.$inject = ['$scope'];
+	List.$inject = ['$scope'];
 
-	function ListController($scope) {
+	function List($scope) {
 		var vm = this;
 		vm.list = $scope.list;
 		vm.isAdding = false;

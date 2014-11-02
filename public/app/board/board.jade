@@ -1,7 +1,7 @@
-div(ng-controller="BoardController as board")
+div(ng-controller="Board as board")
 	.row
 		.col-md-4(ng-repeat="list in board.board.lists | orderBy:'position'")
-			.task-list(ng-controller="ListController as listVm")
+			.task-list(ng-controller="List as listVm")
 				h3.text-center.list-header {{ listVm.list.title }}
 					span.h4(ng-show="listVm.list.cardLimit")  ({{ listVm.list.cardLimit }})
 				div.card(ng-repeat="card in board.board.cards | listCards:listVm.list._id | orderBy:'position'")

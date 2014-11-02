@@ -1,16 +1,16 @@
 (function() {
 	angular
-		.module('kanbanBoard')
-		.controller('BoardController', BoardController);
+		.module('app.board')
+		.controller('Board', Board);
 
-	BoardController.$inject = ['BoardService']
-	function BoardController(BoardService) {
+	Board.$inject = ['dataService']
+	function Board(dataService) {
 		var vm = this;
 
 		activate();
 
 		function activate() {
-			BoardService
+			dataService
 				.getBoard()
 				.then(onGetBoardCompleted);
 		}
