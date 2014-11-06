@@ -1,0 +1,29 @@
+<div ng-controller="Board as board">
+    <div class="row">
+        <div ng-repeat="list in board.board.lists | orderBy:'position'" class="col-md-4">
+            <div ng-controller="List as listVm" class="task-list">
+                <h3 class="text-center list-header">{{ listVm.list.title }}<span ng-show="listVm.list.cardLimit" class="h4"> ({{ listVm.list.cardLimit }})</span></h3>
+                <div ng-repeat="card in board.board.cards | listCards:listVm.list._id | orderBy:'position'" class="card">
+                    <h4>{{ card.title }}</h4>
+                    <div>{{ card.description }}</div>
+                </div>
+                <div ng-show="listVm.isAdding" class="card animate-show">
+                    <form name="addCardForm">
+                        <div class="form-group">
+                            <input name="title" type="text" required="required" placeholder="Task name" ng-model="listVm.newCard.title" class="form-control"/>
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="pull-right">
+                                <a ng-click="listVm.cancelAddCard()" class="btn btn-default">Cancel</a>&nbsp;
+                                <button ng-click="listVm.saveCard()" ng-disabled="addCardForm.$invalid" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div ng-hide="listVm.isAdding" class="animate-show">
+                    <a ng-click="listVm.addNewCard()">Add Card...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
