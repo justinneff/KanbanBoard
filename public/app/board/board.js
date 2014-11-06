@@ -13,7 +13,7 @@
 			$q
 				.when(getBoard())
 				.then(function() {
-					logger.success('Kanban Board Activated');
+					logger.success('Board Activated!');
 				});
 		}
 
