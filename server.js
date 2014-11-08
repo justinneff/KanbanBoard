@@ -14,7 +14,7 @@ require('./server/config/express.config')(app, config);
 require('./server/config/mongoose.config')(config);
 
 // define routes
-require('./server/config/routes.config')(app);
+require('./server/config/routes.config')(app, config);
 
 // start the server
 app.listen(config.port);

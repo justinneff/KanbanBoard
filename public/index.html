@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" lang="en">
     <head>
         <title>Kanban Board</title>
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Vendor css -->
         <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
@@ -10,7 +11,14 @@
         <link rel="stylesheet" href="/css/site.css">
     </head>
     <body>
-        <div ng-include="'app/layout/shell.html'"></div>
+        <div ng-controller="Shell as vm">
+            <header>
+                <div ng-include="'partials/layout/topnav.html'"></div>
+            </header>
+            <div class="container">
+                <div ng-view></div>
+            </div>
+        </div>
         <!-- Vendor js -->
         <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
@@ -33,6 +41,7 @@
         <script type="text/javascript" src="/app/layout/shell.js"></script>
         <!-- Board module js -->
         <script type="text/javascript" src="/app/board/board.module.js"></script>
+        <script type="text/javascript" src="/app/board/config.routes.js"></script>
         <script type="text/javascript" src="/app/board/board.js"></script>
         <script type="text/javascript" src="/app/board/list.js"></script>
     </body>
